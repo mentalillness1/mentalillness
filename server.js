@@ -6,9 +6,9 @@ const path = require('path');
 const chalk = require('chalk');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-mongoose.connect('mongodb+srv://andymikhael:andymikhael2010@gym.7iqbg.mongodb.net/?retryWrites=true&w=majority&appName=gym')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log(chalk.blue('🔗 Database Connected'));
   })
