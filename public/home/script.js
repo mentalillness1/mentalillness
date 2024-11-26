@@ -48,3 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial check on page load
     toggleArrow();
 });
+
+
+// Update the API call
+const apiUrl = 'https://mentalillness.onrender.com/api/views';
+
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // Handle the data from the backend
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
